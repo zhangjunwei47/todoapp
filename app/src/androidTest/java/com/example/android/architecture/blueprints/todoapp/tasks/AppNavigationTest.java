@@ -1,18 +1,3 @@
-/*
- * Copyright 2016, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 package com.example.android.architecture.blueprints.todoapp.tasks;
 
@@ -47,6 +32,7 @@ import static junit.framework.Assert.fail;
 /**
  * Tests for the {@link DrawerLayout} layout component in {@link TasksActivity} which manages
  * navigation within the app.
+ * 主要通过 espresso 来测试ui,
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -90,7 +76,6 @@ public class AppNavigationTest {
 
         // Open Drawer
         //withContentDescription 返回符合描述的视图
-        //猜测是因为 包含R.id.toolbar有好几个.所以通过描述获取. 但是 描述 是什么啊
         onView(withContentDescription(getToolbarNavigationContentDescription(
                 mActivityTestRule.getActivity(), R.id.toolbar))).perform(click());
 
